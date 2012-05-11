@@ -93,6 +93,7 @@ function MatchIndent()
 
 	" Actually apply the rules now
 	if use_tabs > 0
+		set noexpandtab
 		set shiftwidth=4
 		set softtabstop=4
 		set tabstop=4
