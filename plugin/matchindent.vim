@@ -7,7 +7,7 @@
 
 highlight MatchIndentBadIndent ctermbg=red guibg=red
 autocmd BufNewFile,BufRead * call MatchIndent()
-function MatchIndent()
+function! MatchIndent()
 	" Zip through the first few lines and look for the three most common
 	" indenting schemes.
 	let n = 1
