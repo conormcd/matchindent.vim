@@ -61,7 +61,12 @@ function! MatchIndent()
 		" Mix of 2 and 4 space indents, we assume a 2 space indent since 4
 		" space indents happen in 2 space indent files. It's not perfect, but
 		" hey...
-		let use_2_spaces = 1
+		" Only use 4 if theres 4 times as many lines with 4 spaces.
+		if with_2_spaces * 4 > with_4_spaces
+			let use_2_spaces = 1
+		else
+			let use_4_spaces = 1
+		endif
 		let warn_tabs = 1
 	elseif with_tabs > 0 && with_2_spaces == 0 && with_4_spaces == 0
 		" Clear case of tab indents
