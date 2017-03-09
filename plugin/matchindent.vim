@@ -5,6 +5,8 @@
 " Maintainer: http://github.com/conormcd
 " License: www.opensource.org/licenses/bsd-license.php
 
+let g:matchindent_tabsize = 4
+
 highlight MatchIndentBadIndent ctermbg=red guibg=red
 autocmd BufNewFile,BufRead * call MatchIndent()
 function! MatchIndent()
