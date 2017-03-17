@@ -101,9 +101,9 @@ function! MatchIndent()
 	" Actually apply the rules now
 	if use_tabs > 0
 		set noexpandtab
-		set shiftwidth=g:matchindent_tabsize
-		set softtabstop=g:matchindent_tabsize
-		set tabstop=g:matchindent_tabsize
+		let shiftwidth=g:matchindent_tabsize
+		let softtabstop=g:matchindent_tabsize
+		let tabstop=g:matchindent_tabsize
 	endif
 	if use_2_spaces > 0
 		set expandtab
