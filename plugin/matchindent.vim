@@ -1,9 +1,11 @@
 " A Vim plugin which attempts to set tab preferences to match the file you're
 " editing.
-" 
-" Last Change: 2012-04-27
+"
+" Last Change: 2017-03-08
 " Maintainer: http://github.com/conormcd
 " License: www.opensource.org/licenses/bsd-license.php
+
+let g:matchindent_tabsize = 4
 
 highlight MatchIndentBadIndent ctermbg=red guibg=red
 autocmd BufNewFile,BufRead * call MatchIndent()
@@ -99,9 +101,9 @@ function! MatchIndent()
 	" Actually apply the rules now
 	if use_tabs > 0
 		set noexpandtab
-		set shiftwidth=4
-		set softtabstop=4
-		set tabstop=4
+		let shiftwidth=g:matchindent_tabsize
+		let softtabstop=g:matchindent_tabsize
+		let tabstop=g:matchindent_tabsize
 	endif
 	if use_2_spaces > 0
 		set expandtab
