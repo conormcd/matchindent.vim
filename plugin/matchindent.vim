@@ -119,7 +119,7 @@ function! MatchIndent()
 		match MatchIndentBadIndent /^\t\+/
 	endif
 	if warn_spaces > 0
-		match MatchIndentBadIndent /^\(  \)+/
+		match MatchIndentBadIndent /^\(  \)\+/
 	endif
 	if warn_2_spaces > 0
 		match MatchIndentBadIndent /^  [^ ]/
