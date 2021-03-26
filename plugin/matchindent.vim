@@ -124,4 +124,13 @@ function! MatchIndent()
 	if warn_2_spaces > 0
 		match MatchIndentBadIndent /^  [^ ]/
 	endif
+	if !exists("g:MatchIndentWarnAll")
+		let g:MatchIndentWarnAll = 0
+	endif
+	if g:MatchIndentWarnAll > 0
+		" match empty lines with whitespaces
+		match MatchIndentBadIndent /^\s\+$/
+		" match trailing whitespace
+		match MatchIndentBadIndent /\s\+$/
+	endif
 endfunction
